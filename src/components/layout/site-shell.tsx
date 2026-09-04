@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import { UserButton } from "@/lib/auth/gates";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { useCartCount } from "@/lib/cart";
-import { cn } from "@/lib/utils";
+import { img } from "@/lib/assets";
 
 const NAV = [
   { to: "/find", label: "Find Love" },
@@ -49,7 +49,7 @@ function AuthSlot() {
 function Mark({ className }: { className?: string }) {
   return (
     <Link to="/" className={cn("flex items-center gap-2", className)}>
-      <img src="/images/infinity.jpg" alt="" className="size-9 rounded-full object-cover infinity-glow" />
+      <img src={img("/images/infinity.jpg")} alt="" className="size-9 rounded-full object-cover infinity-glow" />
       <span className="text-lg font-extrabold tracking-[0.18em]">BLUE LOVE</span>
     </Link>
   );
@@ -123,7 +123,7 @@ export function SiteFooter() {
     <footer className="border-t border-navy-line bg-navy text-ink">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src="/images/infinity.jpg" alt="" className="h-16 w-16 rounded-full object-cover" />
+          <img src={img("/images/infinity.jpg")} alt="" className="h-16 w-16 rounded-full object-cover" />
           <p className="mt-4 text-2xl font-extrabold tracking-[0.18em]">BLUE LOVE</p>
           <p className="mt-2 text-xs uppercase tracking-[0.2em] text-accent">
             Find Love · Share Love · Be Love

@@ -7,6 +7,7 @@ import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { RedirectToSignIn } from "@/lib/auth/gates";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { img } from "@/lib/assets";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/cart")({ component: Cart });
@@ -84,7 +85,7 @@ function Cart() {
             if (!p) return null;
             return (
               <li key={l.slug + String(l.subscribe)} className="flex items-center gap-4 py-4">
-                <img src={p.image} alt="" className="size-20 rounded-md object-cover" />
+                <img src={img(p.image)} alt="" className="size-20 rounded-md object-cover" />
                 <div className="flex-1">
                   <p className="text-xl font-extrabold">{p.name}</p>
                   <p className="text-xs text-muted">

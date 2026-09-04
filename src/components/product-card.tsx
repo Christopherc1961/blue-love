@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { inStock, money, type Product } from "@/lib/catalog";
 import { useCart } from "@/lib/cart";
 import { Button } from "@/components/ui/button";
+import { img } from "@/lib/assets";
 import { toast } from "sonner";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -11,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="group flex flex-col overflow-hidden rounded-xl border border-line bg-navy-2">
       <Link to="/product/$slug" params={{ slug: product.slug }} className="block overflow-hidden bg-navy">
         <img
-          src={product.image}
+          src={img(product.image)}
           alt={product.name}
           className="aspect-3/4 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />

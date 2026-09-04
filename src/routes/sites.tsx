@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { mercator, SACRED_SITES } from "@/lib/sites";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { img } from "@/lib/assets";
 
 export const Route = createFileRoute("/sites")({ component: Sites });
 
@@ -21,7 +21,7 @@ function Sites() {
         </p>
 
         <div className="relative mt-10 overflow-hidden rounded-xl border border-navy-line">
-          <img src="/images/map.jpg" alt="World of the seven" className="h-[52vh] w-full object-cover" />
+          <img src={img("/images/map.jpg")} alt="World of the seven" className="h-[52vh] w-full object-cover" />
           {SACRED_SITES.map((s) => {
             const { x, y } = mercator(s.lat, s.lng);
             return (
@@ -60,7 +60,7 @@ function Sites() {
           </ol>
           <article>
             <img
-              src="/images/sedona.jpg"
+              src={img("/images/sedona.jpg")}
               alt=""
               className="h-56 w-full rounded-xl object-cover"
             />

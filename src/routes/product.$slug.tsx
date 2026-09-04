@@ -3,7 +3,7 @@ import { getProduct, inStock, money, PRODUCTS } from "@/lib/catalog";
 import { useCart } from "@/lib/cart";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { ProductCard } from "@/components/product-card";
+import { img } from "@/lib/assets";
 
 export const Route = createFileRoute("/product/$slug")({
   component: ProductPage,
@@ -26,7 +26,7 @@ function ProductPage() {
       </p>
       <div className="mt-6 grid gap-10 md:grid-cols-2">
         <div className="overflow-hidden rounded-xl border border-line bg-navy">
-          <img src={product.image} alt={product.name} className="aspect-3/4 w-full object-cover" />
+          <img src={img(product.image)} alt={product.name} className="aspect-3/4 w-full object-cover" />
         </div>
         <div>
           <p className="text-[11px] uppercase tracking-[0.18em] text-accent">

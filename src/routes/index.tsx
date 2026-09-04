@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PRODUCTS } from "@/lib/catalog";
-import { ProductCard } from "@/components/product-card";
+import { img } from "@/lib/assets";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -12,14 +12,14 @@ function Home() {
     <main>
       <section className="relative min-h-[92vh] overflow-hidden bg-navy text-ink">
         <img
-          src="/images/hero.jpg"
+          src={img("/images/hero.jpg")}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/images/hero.mp4"
-          poster="/images/hero.jpg"
+          src={img("/images/hero.mp4")}
+          poster={img("/images/hero.jpg")}
           autoPlay
           muted
           loop
@@ -131,7 +131,7 @@ function Home() {
             </div>
           </div>
           <img
-            src="/images/nmn.png"
+            src={img("/images/nmn.png")}
             alt="Blue Love NMN"
             className="h-[420px] w-full rounded-xl object-cover object-center"
           />

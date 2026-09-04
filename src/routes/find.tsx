@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CATEGORIES, PRODUCTS } from "@/lib/catalog";
 import { ProductCard } from "@/components/product-card";
-import { Button } from "@/components/ui/button";
+import { img } from "@/lib/assets";
 
 export const Route = createFileRoute("/find")({ component: Find });
 
@@ -10,7 +10,7 @@ function Find() {
   return (
     <main>
       <section className="relative bg-navy text-ivory">
-        <img src="/images/hero.jpg" alt="" className="h-[48vh] w-full object-cover opacity-50" />
+        <img src={img("/images/hero.jpg")} alt="" className="h-[48vh] w-full object-cover opacity-50" />
         <div className="mx-auto max-w-6xl px-4 py-16">
           <p className="text-xs uppercase tracking-[0.22em] text-ivory/60">Find Love</p>
           <h1 className="mt-3 font-display text-5xl md:text-6xl">The seeking</h1>

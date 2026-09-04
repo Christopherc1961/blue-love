@@ -5,6 +5,7 @@ import { listCircle, postCircle } from "@/lib/server/house";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { img } from "@/lib/assets";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/share")({ component: Share });
@@ -34,7 +35,7 @@ function Share() {
         Group, conversation, forum. Not a comment section under an ad. A room where
         practice is spoken out loud so it does not die in private.
       </p>
-      <img src="/images/share.jpg" alt="" className="mt-8 h-64 w-full rounded-xl object-cover" />
+      <img src={img("/images/share.jpg")} alt="" className="mt-8 h-64 w-full rounded-xl object-cover" />
 
       <form
         className="mt-10 rounded-xl border border-line bg-navy-2 p-5"

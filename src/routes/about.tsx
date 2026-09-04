@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
+import { img } from "@/lib/assets";
 
 export const Route = createFileRoute("/about")({ component: About });
 
@@ -23,7 +23,7 @@ function About() {
         that asks you to sit. A circle that spends 3% of every dollar on someone who
         cannot. Distributed by Blue Love, LLC — Miami.
       </p>
-      <img src="/images/hero.jpg" alt="" className="mt-10 rounded-xl" />
+      <img src={img("/images/hero.jpg")} alt="" className="mt-10 rounded-xl" />
       <div className="mt-10 flex gap-3">
         <Button asChild>
           <Link to="/membership">Sit with us</Link>
