@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: #001646;
+  --color-bg-warm: #001a52;
+  --color-ivory: #f4f8ff;
+  --color-surface: #072056;
+  --color-navy: #000d2e;
+  --color-navy-2: #021c5c;
+  --color-ink: #ffffff;
+  --color-muted: #8eb4d8;
+  --color-accent: #00d4ff;
+  --color-accent-fg: #001646;
+  --color-blue: #008bdf;
+  --color-line: #1e4d8a;
+  --color-navy-line: #1e4d8a;
+  --color-danger: #f07178;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.72);
+    opacity: 0.7;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.breath-orb {
+  animation: breathe 12s ease-in-out infinite;
+  background: radial-gradient(circle, #00d4ff 0%, #008bdf 45%, #001646 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breath-orb {
+    animation: none;
+  }
+}
+
+@keyframes infinity-pulse {
+  0%,
+  100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 12px #00d4ff);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 28px #00d4ff);
+  }
+}
+
+.infinity-glow {
+  animation: infinity-pulse 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinity-glow {
+    animation: none;
+  }
+}
